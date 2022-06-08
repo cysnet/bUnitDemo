@@ -1,0 +1,11 @@
+﻿<h3>WaitForStateComponent</h3>
+<div>currernt user is @Name</div>
+@code {
+    public string Name { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Delay(5 * 1000);
+        Name = "Jane";
+    }
+}

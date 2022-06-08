@@ -1,0 +1,9 @@
+﻿<h3>name is @Name, Age is @Age</h3>
+
+@code {
+    [CascadingParameter]
+    public string Name { get; set; }
+
+    [CascadingParameter(Name = "UserAge")]
+    public int Age { get; set; }
+}

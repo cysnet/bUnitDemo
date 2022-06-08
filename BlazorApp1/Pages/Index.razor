@@ -1,0 +1,23 @@
+﻿@page "/"
+
+<h1>@Name</h1>
+@if (Hobbies != null)
+{
+    foreach (var item in Hobbies)
+    {
+        <h2>@item</h2>
+    }
+}
+
+@code {
+    [Parameter]
+    public string Name { get; set; } = "";
+    [Parameter]
+    public List<string>? Hobbies { get; set; }
+    [Parameter]
+    public EventCallback<string>? ShowName { get; set; }
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+    [Parameter]
+    public RenderFragment? Content { get; set; }
+}

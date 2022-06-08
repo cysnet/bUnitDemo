@@ -1,0 +1,18 @@
+﻿@page "/template"
+@typeparam TItem
+
+<div>
+    @foreach (var item in Items)
+    {
+        @Template(item)
+    }
+</div>
+
+
+@code{
+    [Parameter]
+    public IEnumerable<TItem> Items { get; set; }
+
+    [Parameter]
+    public RenderFragment<TItem> Template { get; set; }
+}

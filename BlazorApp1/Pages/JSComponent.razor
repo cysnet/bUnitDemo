@@ -1,0 +1,13 @@
+﻿@page "/js"
+@inject IJSRuntime JS
+
+<h3>JSComponent</h3>
+<button id="btn" class="btn btn-primary" @onclick="OnClick">Click me</button>
+<h1>name is @userName</h1>
+@code {
+    private string userName{ get; set; }
+    public async Task OnClick()
+    {
+        userName = await JS.InvokeAsync<string>("getUserName");
+    }
+}

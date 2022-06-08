@@ -1,0 +1,32 @@
+﻿<h3>@Name</h3>
+
+@code {
+    [Parameter]
+    public string Name { get; set; }
+
+    public override Task SetParametersAsync(ParameterView parameters)
+    {
+        System.Diagnostics.Trace.WriteLine(nameof(SetParametersAsync));
+        return base.SetParametersAsync(parameters);
+    }
+
+    protected override Task OnInitializedAsync()
+    {
+        System.Diagnostics.Trace.WriteLine(nameof(OnInitializedAsync));
+        return base.OnInitializedAsync();
+    }
+
+
+    protected override Task OnParametersSetAsync()
+    {
+        System.Diagnostics.Trace.WriteLine(nameof(OnParametersSetAsync));
+        return base.OnParametersSetAsync();
+    }
+
+    protected override Task OnAfterRenderAsync(bool firstRender)
+    {
+        System.Diagnostics.Trace.WriteLine(nameof(OnAfterRenderAsync));
+        return base.OnAfterRenderAsync(firstRender);
+    }
+
+}
